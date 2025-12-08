@@ -1,0 +1,142 @@
+
+/*Cuerpo general de al app web*/ 
+body{
+    font-family: 'Lucida Sans';
+    background-color: #F1F5F9;
+    height: 100dvh;
+    width: 100%;
+    margin: 0;
+
+    color: #1B5E20;
+}
+
+html, body, app-root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*Fuentes*/
+@font-face {
+    font-family: 'socrates';
+    src: url('./assets/Philosopher-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/Montserrat-Regular.ttf');
+}
+
+
+.button-light{
+    font-size: 1rem;
+    background-color: #C8E6C9;
+    border: 0.5px solid #1B5E20;
+    padding: 4px 13px;
+    border-radius: 30px;
+    cursor: pointer;
+
+    color: #1B5E20;
+
+    &:hover{
+        background-color: #9de39edb;
+    }
+}
+
+.button-modal-action{
+    border-radius: 7px;
+    border: none;
+    padding:  7px 13px;
+    cursor: pointer;
+    transition: background-color 0.2s ease ;
+    outline: none;
+    
+
+    color: #fff;
+}
+
+.button-modal-action--red {
+
+    background-color: #AE0000 ;
+    &:hover{
+        background-color: #af3c3c;
+    }
+
+}
+
+
+.button-modal-action--elverde{
+
+    background-color: #2E7D32;
+    &:hover{
+        background-color: #527a54;
+    }
+
+}
+
+.button-modal-action--gray{
+
+    background-color: #8C8C8C;
+    &:hover{
+        background-color: #afafaf;
+    }
+}
+
+.fieldset{
+
+    border: none;
+    width: 100%;
+
+}
+
+.input{
+
+    border-radius: 35px;
+    border: 1px solid #7C7C7C;
+    padding: 17px 17px;
+    outline: none;
+    width: 100%;
+
+    &:focus{
+
+        background-color: none;
+        outline: 1px #585858 inset;
+        
+    }
+
+}
+
+.button-login-register{
+    color: white;
+    border-radius: 35px;
+    padding: 12px 15px;
+    border: none;
+    width: 70%;
+    justify-content: center;
+
+    background-color: #0E3520;
+    &:hover{
+        background-color: #3a5d4b;
+    }
+}
+
+.form{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+

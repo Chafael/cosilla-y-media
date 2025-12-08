@@ -1,0 +1,35 @@
+<div class="active-projects-card">
+  <div class="card-header">
+    <div class="header-title">
+      <span class="material-icons icon-header">check_circle</span>
+      <h2>Proyectos Activos</h2>
+    </div>
+    <span class="count-badge">{{ activeCount }}</span>
+  </div>
+
+  @if (loading) {
+    <div class="loading-state">
+      <p>Cargando proyectos...</p>
+    </div>
+  } @else if (displayProjects.length === 0) {
+    <div class="empty-state">
+      <p>No hay proyectos activos todavía</p>
+      <p style="font-size: 0.9rem; margin-top: 10px;">Crea tu primer proyecto para comenzar</p>
+    </div>
+  } @else {
+    <div class="projects-list">
+      @for (project of displayProjects; track project.id) {
+        <div class="project-item">
+          <div class="project-icon">
+            <span class="material-icons">folder</span>
+          </div>
+          <div class="project-info">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.numberOfZones }} zonas de estudio</p>
+          </div>
+          <span class="status-badge">{{ project.status }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>

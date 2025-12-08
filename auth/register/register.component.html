@@ -1,0 +1,123 @@
+<main class="login-main">
+
+    <div class="login-container">
+        <section class="login-section">
+            <div class="welcome">
+                <h1 class="logo">SYLVARA</h1>
+                <h2>¡CREA TU CUENTA!</h2>
+                <p>Comienza tu experiencia con nosotros hoy mismo</p>
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()" class="form"> 
+                <div style="width: 100%;">
+                    <input 
+                        id="name" 
+                        class="input" 
+                        [class.input-error]="hasError('name', 'required')"
+                        formControlName="name" 
+                        type="text" 
+                        placeholder="Ingresa tu nombre">
+                    @if (hasError('name', 'required')) {
+                        <span class="error-text">{{ getErrorMessage('name') }}</span>
+                    }
+                </div>
+
+                <!-- Apellidos -->
+                <div style="width: 100%;">
+                    <input 
+                        id="lastName" 
+                        class="input" 
+                        [class.input-error]="hasError('lastName', 'required')"
+                        formControlName="lastName" 
+                        type="text" 
+                        placeholder="Ingresa tus apellidos">
+                    @if (hasError('lastName', 'required')) {
+                        <span class="error-text">{{ getErrorMessage('lastName') }}</span>
+                    }
+                </div>
+
+                <div style="width: 100%;">
+                    <input 
+                        id="email" 
+                        class="input" 
+                        [class.input-error]="hasError('email', 'required') || hasError('email', 'email')"
+                        formControlName="email" 
+                        type="email" 
+                        placeholder="Ingresa tu correo electrónico">
+                    @if (hasError('email', 'required') || hasError('email', 'email')) {
+                        <span class="error-text">{{ getErrorMessage('email') }}</span>
+                    }
+                </div>
+
+                <div style="width: 100%;">
+                    <input 
+                        id="birthDate" 
+                        class="input" 
+                        [class.input-error]="hasError('birthDate', 'required')"
+                        formControlName="birthDate" 
+                        type="date"
+                        placeholder="Fecha de nacimiento">
+                    @if (hasError('birthDate', 'required')) {
+                        <span class="error-text">{{ getErrorMessage('birthDate') }}</span>
+                    }
+                </div>
+
+                <div style="width: 100%;">
+                    <input 
+                        id="password" 
+                        class="input" 
+                        [class.input-error]="hasError('password', 'required') || hasError('password', 'minlength')"
+                        formControlName="password" 
+                        type="password" 
+                        placeholder="Crea tu contraseña (mínimo 8 caracteres)">
+                    @if (hasError('password', 'required') || hasError('password', 'minlength')) {
+                        <span class="error-text">{{ getErrorMessage('password') }}</span>
+                    }
+                </div>
+
+                <div style="width: 100%;">
+                    <input 
+                        id="confirmPassword" 
+                        class="input" 
+                        [class.input-error]="hasError('confirmPassword', 'required') || confirmPassword.hasError('mismatch')"
+                        formControlName="confirmPassword" 
+                        type="password" 
+                        placeholder="Confirma tu contraseña">
+                    @if (hasError('confirmPassword', 'required')) {
+                        <span class="error-text">{{ getErrorMessage('confirmPassword') }}</span>
+                    }
+                    @if (confirmPassword.hasError('mismatch') && !hasError('confirmPassword', 'required')) {
+                        <span class="error-text">Las contraseñas no coinciden</span>
+                    }
+                </div>
+
+                @if (errorMessage) {
+                    <div class="error-message">
+                        {{ errorMessage }}
+                    </div>
+                }
+
+                <button 
+                    class="button-login-register" 
+                    type="submit"
+                    [disabled]="isLoading">
+                    @if (isLoading) {
+                        Registrando...
+                    } @else {
+                        ¡Registrarme!
+                    }
+                </button>
+
+                <div class="register-link">
+                    <span>¿Ya tienes una cuenta? </span>
+                    <a (click)="navigateToLogin()" style="cursor: pointer;">Inicia sesión aquí</a>
+                </div>
+            </form>
+        </section>
+
+        <section class="image-login-section">
+            <img class="image-login" src="https://images.unsplash.com/photo-1508930993032-fbbaf4f2821a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </section>
+    </div>
+
+</main>

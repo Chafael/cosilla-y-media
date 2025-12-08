@@ -1,0 +1,103 @@
+.icon-selected {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+
+  &:hover{
+    background-color: #1da524e4;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px; 
+  height: 96dvh;
+  background-color: #fff;
+  border-right: 1px solid #E2E8F0;
+  padding: 10px;
+  overflow: hidden;
+  transition: width 0.4s ease;
+  box-sizing: border-box;
+}
+
+.sidebar:hover {
+  width: 200px;
+}
+
+.sidebar-option-container {
+  width: 45px;
+  margin-bottom: 10px;
+  transition: width 0.4s ease;
+
+}
+
+.sidebar-option-container button {
+  background-color: #6a994e;
+  border: 1px solid #6a994e;
+  border-radius: 8px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  cursor: pointer;
+  transition: background-color 0.2s ease, width 0.4s ease;
+  width: 100%;
+  padding-left: 10px;
+  gap: 10px;
+  color: #fff; 
+  overflow: hidden;
+}
+
+.sidebar-option-container button:hover {
+  background-color: rgba(39, 149, 6, 0.753);
+
+}
+
+.sidebar-option-container button.icon-selected {
+  background-color: #2E7D32;
+  border-color: #2E7D32;
+}
+
+.icon-sidebar {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: #fff; 
+}
+
+.name-option {
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar:hover .name-option {
+  width: 120px;
+  opacity: 1;
+}
+
+.sidebar:hover .sidebar-option-container{
+
+  width: 160px;
+
+}
+
+.last-option{
+
+  margin-bottom: 0;
+  
+
+
+}
+
+
+
+
+
+
